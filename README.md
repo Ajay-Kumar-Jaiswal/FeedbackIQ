@@ -126,21 +126,6 @@ SalesFlow CRM uses JWT-based authentication with `HS256` and role-based authoriz
 - Git
 - Modern web browser
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/salesflow-platform.git
-cd salesflow-platform
-```
-
-### 2. Create the Database
-
-Open MySQL and run:
-
-```sql
-CREATE DATABASE salesflow;
-```
-
 ### 3. Configure the Backend
 
 Navigate to the backend directory:
@@ -160,7 +145,6 @@ ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 ENVIRONMENT=development
 ```
 
-> **Note:** Do not commit `.env` or any credentials to GitHub.
 
 ### 4. Install Dependencies & Run Backend
 
@@ -263,6 +247,4 @@ Tests cover:
 
 ## 📄 License
 
-This project is licensed under the MIT License.
-📄 License
 This project is licensed under the MIT License.
