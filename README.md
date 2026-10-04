@@ -103,71 +103,131 @@ salesflow-crm/
 ```
 ---
 
-🔒 Authentication & Roles
-JWT authentication using HS256 with role-based authorization.
-Feature	ADMIN	SALES_REP
-View Dashboard	Yes	Assigned Data
-Manage Users	Yes	No
-Manage Customers	All	Assigned
-Manage Opportunities	All	Assigned
-Activities & Follow-ups	Yes	Yes
+## 🔒 Authentication & Roles
 
+SalesFlow CRM uses JWT-based authentication with `HS256` and role-based authorization.
 
-🚀 Setup & Usage
-Prerequisites
+| Feature | ADMIN | SALES_REP |
+|:---|:---:|:---:|
+| View Dashboard | Yes | Assigned Data |
+| Manage Users | Yes | No |
+| Manage Customers | All | Assigned |
+| Manage Opportunities | All | Assigned |
+| Activities & Follow-ups | Yes | Yes |
+
+---
+
+## 🚀 Setup & Usage
+
+### Prerequisites
+
 - Python 3.12+
 - MySQL 8.0
 - Git
 - Modern web browser
 
-3. Configure Backend
-cd backend
+### 1. Clone the Repository
 
-Create .env from .env.example and configure:
+```bash
+git clone https://github.com/YOUR_USERNAME/salesflow-platform.git
+cd salesflow-platform
+```
+
+### 2. Create the Database
+
+Open MySQL and run:
+
+```sql
+CREATE DATABASE salesflow;
+```
+
+### 3. Configure the Backend
+
+Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+Create `.env` from `.env.example` and configure:
+
+```env
 DATABASE_URL=mysql+pymysql://root:YOUR_PASSWORD@localhost:3306/salesflow
 SECRET_KEY=your_secret_key_here
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=60
 ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 ENVIRONMENT=development
+```
 
-Do not commit .env to GitHub.
+> **Note:** Do not commit `.env` or any credentials to GitHub.
 
-4. Install Dependencies & Run Backend
-Create and activate a virtual environment:
+### 4. Install Dependencies & Run Backend
+
+Create a virtual environment:
+
+```bash
 python -m venv .venv
+```
 
-Windows PowerShell:
+**Windows PowerShell**
+
+```powershell
 .\.venv\Scripts\Activate.ps1
+```
 
-Linux/macOS:
+**Linux/macOS**
+
+```bash
 source .venv/bin/activate
+```
 
 Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
 Run database migrations:
+
+```bash
 alembic upgrade head
+```
 
 Start the backend:
+
+```bash
 uvicorn app.main:app --reload --port 8000
+```
 
-Backend runs at:
-http://localhost:8000
+Backend API:
 
-5. Run Frontend
-Open another terminal:
+`http://localhost:8000`
+
+### 5. Run the Frontend
+
+Open a new terminal:
+
+```bash
 cd frontend
 python -m http.server 3000
+```
 
-Open:
-http://localhost:3000
+Open the application:
 
-📚 API Documentation
+`http://localhost:3000`
+
+---
+
+## 📚 API Documentation
+
 FastAPI provides interactive API documentation:
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
-The API provides endpoints for:
+
+- **Swagger UI:** `http://localhost:8000/docs`
+- **ReDoc:** `http://localhost:8000/redoc`
+
+The API includes endpoints for:
+
 - Authentication
 - User management
 - Customer management
@@ -175,11 +235,20 @@ The API provides endpoints for:
 - Activities
 - Follow-ups
 - Dashboard analytics
-🧪 Tests
-From the backend directory:
+
+---
+
+## 🧪 Testing
+
+Run the test suite from the `backend` directory:
+
+```bash
+cd backend
 pytest -v
+```
 
 Tests cover:
+
 - Authentication
 - Role-based access control
 - Customer CRUD
@@ -189,5 +258,11 @@ Tests cover:
 - Activities
 - Follow-ups
 - Dashboard calculations
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
 📄 License
 This project is licensed under the MIT License.
