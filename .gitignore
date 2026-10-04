@@ -1,0 +1,72 @@
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.venv/
+venv/
+env/
+ENV/
+
+*.egg-info/
+dist/
+build/
+
+# =========================
+# Flask
+# =========================
+instance/
+*.log
+
+# =========================
+# Node / React
+# =========================
+node_modules/
+frontend/node_modules/
+
+dist/
+frontend/dist/
+
+.npm/
+*.tgz
+
+# =========================
+# IDE / Editors
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Java / Maven leftovers
+# =========================
+target/
+*.class
+
+# =========================
+# Coverage
+# =========================
+.coverage
+htmlcov/
+coverage.xml
+.pytest_cache/
