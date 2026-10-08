@@ -80,3 +80,145 @@ Flask REST API
       │
       ▼
 MySQL Database
+
+## 🔒 Authentication & Security
+
+FeedbackIQ uses JWT-based authentication to protect API endpoints.
+
+Security features include:
+
+- JWT authentication
+- Bcrypt password hashing
+- Protected API routes
+- Input validation
+- Validation of AI-generated responses
+
+---
+
+## 🚀 Setup & Usage
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js and npm
+- MySQL
+- Gemini API key
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/feedbackiq.git
+cd feedbackiq
+```
+
+### 2. Configure Backend
+
+Create and activate a Python virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+**Windows PowerShell:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+**Linux/macOS:**
+
+```bash
+source .venv/bin/activate
+```
+
+Install backend dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file and configure your environment variables:
+
+```env
+DATABASE_URL=mysql+pymysql://root:YOUR_PASSWORD@localhost:3306/feedbackiq
+SECRET_KEY=your_secret_key_here
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+> **Note:** Do not commit `.env` or API keys to GitHub.
+
+### 3. Create the Database
+
+Open MySQL and run:
+
+```sql
+CREATE DATABASE feedbackiq;
+```
+
+### 4. Start the Backend
+
+```bash
+python app.py
+```
+
+The backend runs at:
+
+```text
+http://localhost:5000
+```
+
+### 5. Start the Frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+The frontend runs at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🧪 Testing
+
+Run the backend test suite using:
+
+```bash
+pytest -v
+```
+
+Tests cover areas including:
+
+- Authentication
+- AI response validation
+- Gemini failure handling
+- Sentiment analysis
+- Mixed-sentiment feedback
+- Negation cases
+- Security-related validation
+
+AI API calls can be mocked during testing to verify application behavior
+without depending on live Gemini responses.
+
+---
+
+## 📌 Future Improvements
+
+- Feedback analytics dashboard
+- Batch feedback processing
+- Export analyzed feedback
+- Historical sentiment trends
+- Additional AI providers
+- Improved feedback categorization
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
