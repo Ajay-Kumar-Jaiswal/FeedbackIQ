@@ -105,14 +105,8 @@ Security features include:
 - MySQL
 - Gemini API key
 
-### 1. Clone the Repository
 
-```bash
-git clone https://github.com/YOUR_USERNAME/feedbackiq.git
-cd feedbackiq
-```
-
-### 2. Configure Backend
+### 1. Configure Backend
 
 Create and activate a Python virtual environment:
 
@@ -148,7 +142,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 > **Note:** Do not commit `.env` or API keys to GitHub.
 
-### 3. Create the Database
+### 2. Create the Database
 
 Open MySQL and run:
 
@@ -156,7 +150,7 @@ Open MySQL and run:
 CREATE DATABASE feedbackiq;
 ```
 
-### 4. Start the Backend
+### 3. Start the Backend
 
 ```bash
 python app.py
@@ -168,7 +162,7 @@ The backend runs at:
 http://localhost:5000
 ```
 
-### 5. Start the Frontend
+### 4. Start the Frontend
 
 Open another terminal:
 
