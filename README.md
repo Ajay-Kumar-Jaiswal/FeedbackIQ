@@ -80,7 +80,8 @@ Flask REST API
       │
       ▼
 MySQL Database
-
+```
+---
 ## 🔒 Authentication & Security
 
 FeedbackIQ uses JWT-based authentication to protect API endpoints.
